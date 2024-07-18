@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class ValidUserNameChecker {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter your username: ");
+        String userName = s.nextLine();
+        if (isValidUserName(userName)) {
+            System.out.println("Valid username entered.");
+        } else {
+            System.out.println("Invalid username entered.");
+        }
+        s.close();
+    }
+    private static boolean isValidUserName(String userName) {
+        return userName.matches("^[a-zA-Z0-9_-]{3,16}$");
+    }
+}
